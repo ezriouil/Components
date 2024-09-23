@@ -1,1 +1,73 @@
-aa
+Stack(
+ children: [
+ WidgetAnimator(
+ atRestEffect:
+ WidgetRestingEffects.pulse(curve: Curves.easeInBack),
+ child: Image.asset("assets/images/lightning.png",
+ height: 450),
+ ),
+ Column(
+ crossAxisAlignment: CrossAxisAlignment.center,
+ children: [
+ Text("Skills",
+ style: Theme.of(context)
+ .textTheme
+ .headlineLarge
+ ?.copyWith(color: CustomColors.PRIMARY_1)),
+ SizedBox(height: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Text("Technologies I've been working with recently",
+ style: Theme.of(context)
+ .textTheme
+ .headlineMedium
+ ?.copyWith(
+ color: CustomColors.PRIMARY_1
+ .withOpacity(0.6),)),
+ SizedBox(height: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Row(
+ mainAxisAlignment: MainAxisAlignment.center,
+ children: [
+ Image.asset(
+ "assets/icons/languages/flutter_icon.png",
+ color: CustomColors.PRIMARY_2,
+ width: 80,
+ height: 80),
+ SizedBox(
+ width: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Image.asset(
+ "assets/icons/languages/java_icon.png",
+ color: CustomColors.PRIMARY_2,
+ width: 80,
+ height: 80),
+ SizedBox(
+ width: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Image.asset(
+ "assets/icons/languages/kotlin_icon.png",
+ color: CustomColors.PRIMARY_2,
+ width: 80,
+ height: 80),
+ SizedBox(
+ width: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Image.asset(
+ "assets/icons/languages/swift_icon.png",
+ color: CustomColors.PRIMARY_2,
+ width: 80,
+ height: 80),
+ SizedBox(
+ width: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Image.asset(
+ "assets/icons/languages/android_studio_icon.png",
+ color: CustomColors.PRIMARY_2,
+ width: 80,
+ height: 80),
+ SizedBox(
+ width: CustomSizes.WEB_SPACE_BETWEEN_ITEMS),
+ Image.asset(
+ "assets/icons/languages/vs_code_icon.png",
+ color: CustomColors.PRIMARY_2,
+ width: 80,
+ height: 80),
+ ],
+ ),
+ ])
+ ],
+),
