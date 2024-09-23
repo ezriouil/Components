@@ -1,0 +1,84 @@
+ /* -- CONTROLLER- */
+final RxInt = isHoveringContactIcons = false.obs;
+onUpdateHoverContactIconsState(bool hover) =>
+ isHoveringContactIcons.value = hover;
+
+ /* -- SCREEN -- */
+Column(
+ mainAxisAlignment: MainAxisAlignment.end,
+ crossAxisAlignment: CrossAxisAlignment.start,
+ children: [
+
+/* -- FLOATING ACTION BUTTON 1 -- */
+ InkWell(
+ onTap: controller.onNavigateToGmail,
+ hoverColor: CustomColors.RED.withOpacity(0.4),
+ onHover: controller.onUpdateHoverWhatsappIconState,
+ borderRadius: BorderRadius.circular(
+ CustomSizes.SPACE_BETWEEN_SECTIONS),
+ child: Row(
+ children: [
+ Image.asset("assets/icons/gmail_icon.png",
+ height: 54, width: 54),
+ Obx(
+ () => Text(
+ controller.isHoveringWhatsappIcon.isTrue
+ ? " EMAIL "
+ : "",
+ style: Theme.of(context).textTheme.bodyLarge),
+ ),
+ ],
+ ),
+ ),
+
+ /* -- SPACER -- */
+ const SizedBox(height: CustomSizes.SPACE_BETWEEN_ITEMS / 2),
+
+ /* -- FLOATING ACTION BUTTON 2 -- */
+ InkWell(
+ onTap: controller.onNavigateToPhoneCall,
+ hoverColor: CustomColors.BLUE.withOpacity(0.4),
+ onHover: controller.onUpdateHoverWhatsappIconState,
+ borderRadius: BorderRadius.circular(
+ CustomSizes.SPACE_BETWEEN_SECTIONS),
+ child: Row(
+ children: [
+ Image.asset("assets/icons/telephone_icon.png",
+ height: 50, width: 50),
+ Obx(
+ () => Text(
+ controller.isHoveringWhatsappIcon.isTrue
+ ? " PHONE CALL "
+ : "",
+ style: Theme.of(context).textTheme.bodyLarge),
+ ),
+ ],
+ ),
+ ),
+ 
+ /* -- SPACER -- */
+ const SizedBox(height: CustomSizes.SPACE_BETWEEN_ITEMS / 2),
+
+ /* -- FLOATING ACTION BUTTON 3 -- */
+ InkWell(
+ onTap:(){controller.onNavigateToWhatsapp();},
+ hoverColor: CustomColors.GREEN_LIGHT.withOpacity(0.4),
+ onHover: controller.onUpdateHoverWhatsappIconState,
+ borderRadius: BorderRadius.circular(
+ CustomSizes.SPACE_BETWEEN_SECTIONS),
+ child: Row(
+ children: [
+ Image.asset("assets/icons/whatsapp_icon.png",
+ height: 50, width: 50),
+ Obx(
+ () => Text(
+ controller.isHoveringWhatsappIcon.isTrue
+ ? " WHATSAPP "
+ : "",
+ style: Theme.of(context).textTheme.bodyLarge),
+ ),
+ ],
+ ),
+ )
+ ],
+)
